@@ -158,7 +158,7 @@ def update_header(content: str, *, new_val: float, kind: str):
     old_val = _get_scalar_with_unit(content, scalar_key, "kg/m3")
     scale = 1.0
     if old_val is not None and new_val != 0.0:
-        scale = float(old_val) / float(new_val)
+        scale = float(new_val) / float(old_val)
 
     # --- Update DENSITY[...] (g/cm3) ---
     new_density_g_cm3 = float(new_val) * 1e-3
